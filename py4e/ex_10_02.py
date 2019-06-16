@@ -1,5 +1,4 @@
 # Exercise 10.2
-print('Exercise 10.2')
 valid = None
 while valid is None:
     fileName = input('Enter a file name: ')
@@ -14,7 +13,9 @@ while valid is None:
                 sentTimeLst = sentTime.split(':')
                 sentTimeHr = sentTimeLst[0]
                 counts[sentTimeHr] = counts.get(sentTimeHr,0) + 1
-        #print( sorted ( [ (v,k) for k,v in counts.items()]))
+        sortedList =  sorted ( [ (k,v) for k,v in counts.items()])
+        for iter in sortedList:
+            print(iter[0], iter[1])
     except Exception as e:
         print('Enter a valid file name')
     continue
